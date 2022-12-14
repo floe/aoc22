@@ -1,6 +1,6 @@
 # Advent of Code 2022
 
-So this year, I came across Advent of Code (again), and decided to give it a go. Solutions in the repo, random notes below.
+So this year, I came across [https://adventofcode.com/2022](Advent of Code) (again), and decided to give it a go. Solutions in the repo, random notes below. I'll note that I didn't look up any solutions or hints anywhere else, including ChatGPT, this is 100% my own mess.
 
 ### Day 1-7
 
