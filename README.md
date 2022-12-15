@@ -45,3 +45,12 @@ Part 2 is really straightforward, just wrap the comparision function into a clas
 ### Day 14
 
 Can be simulated in a large array. Just look for the minimum and maximum x/y values while parsing, and use that to size your array, then just run it step-by-step exactly as described in the example.
+
+### Day 15
+
+The first part is again relatively straightforward: for any given location, check if it is farther away (by Manhattan distance) from each sensor than that sensor's closest beacon. Conversely, if a location is closer to any one sensor than its closest beacon, then it cannot contain a beacon, because that would otherwise be that sensor's closest one. I picture it as an "exclusion zone" around each sensor. In any case, for part 1, I picked the midpoint between the sensors (average of all sensor x coords) and then scanned outwards on the given y coordinate, both left and right, until I found the first location that _could_ contain a beacon. Sum together, done.
+
+And then part 2. I admit that had me pretty stumped at first; I did try the naive 4M x 4M loop, but that would need somewhere around 16 * 10^12 location checks, each with an iteration through the sensor array, and a rough estimate put the runtime on my laptop somewhere around 47 days. Probably not the way to do it, then. 
+
+I did turn this over in the back of my head for nearly the whole day, and finally had the realization that if there is only a single location that fits, then it must be exactly outside the border of an exclusion zone. And thanks to Manhattan distance, the exclusion zones all have a very symmetric diamond shape, so it's not too difficult to just scan around the outside of the exclusion zone of each sensor and check whether any other sensor can see that location. Bam, also solved. 😁
+
