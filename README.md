@@ -1,5 +1,7 @@
 # Advent of Code 2022
 
+*Warning ⚠️ spoilers below*
+
 So this year, I came across [Advent of Code](https://adventofcode.com/2022) (again), and decided to give it a go. Solutions in the repo, random notes below. I'll note that I didn't look up any solutions or hints anywhere else (especially including ChatGPT or CoPilot), this is 100% my own mess. (With the obvious exception that I have to google super-primitive Python idioms all the time. Did you know that `swap(a,b)` in Python is canonically `b,a = a,b`? Neat, isn't it?) 
 
 ### Day 1-7
@@ -54,3 +56,6 @@ And then part 2. I admit that had me pretty stumped at first; I did try the naiv
 
 I did turn this over in the back of my head for nearly the whole day, and finally had the realization that if there is only a single location that fits, then it must be exactly outside the border of an exclusion zone. And thanks to Manhattan distance, the exclusion zones all have a very symmetric diamond shape, so it's not too difficult to just scan around the outside of the exclusion zone of each sensor and check whether any other sensor can see that location. Bam, also solved. 😁
 
+### Day 16
+
+So... not solved yet. Hamilton cycles? Maybe not, perhaps rather a permutation of the valves with shortest paths in between?
