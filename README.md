@@ -4,9 +4,13 @@
 
 So this year, I came across [Advent of Code](https://adventofcode.com/2022) (again), and decided to give it a go. Solutions in the repo, random notes below. I'll note that I didn't look up any solutions or hints anywhere else (especially including ChatGPT or CoPilot), this is 100% my own mess. (With the obvious exception that I have to google super-primitive Python idioms all the time. Did you know that `swap(a,b)` in Python is canonically `b,a = a,b`? Neat, isn't it?) 
 
-### Day 1-7
+### Day 1-6
 
 All pretty straightforward, not much to screw up 😉
+
+### Day 7 (File System)
+
+Recursion FTW!
 
 ### Day 8 (Treehouse View)
 
@@ -63,6 +67,8 @@ So... not solved yet. Hamilton cycles? Maybe not, perhaps rather test all permut
 ### Day 17 (Rock Tetris)
 
 Part 1: not so super-hard, a bit tedious to handle the various rock shapes, but a relatively straightforward step-by-step simulation. The second part gets more interesting, because my approach would take about 277 days again, this needs a _bit_ more optimization (the memory requirements aren't a problem, because you can just pop a couple 1000 lines off the bottom of the array periodically and add empty ones on top again).
+
+Hm, maybe the pattern will repeat at some point?
 
 ### Day 18 (Lava Droplets)
 
