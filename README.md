@@ -58,4 +58,8 @@ I did turn this over in the back of my head for nearly the whole day, and finall
 
 ### Day 16
 
-So... not solved yet. Hamilton cycles? Maybe not, perhaps rather a permutation of the valves with shortest paths in between?
+So... not solved yet. Hamilton cycles? Maybe not, perhaps rather test all permutations of the valves with shortest paths in between? Implemented the second idea, but again with a crazy runtime of something * 10^12 seconds, 700 days or so. This needs more work. Probably possible to represent only the valves and paths as a smaller graph and then run Floyd-Warshall again?
+
+### Day 17
+
+Not so super-hard, a bit tedious to handle the various rock shapes, but a relatively straightforward step-by-step simulation. The second part gets more interesting, because it would take about 277 days again, this needs a bit more optimization (the memory requirements aren't a problem, because you can just pop a couple 1000 lines off the bottom of the array periodically and add empty ones on top again).
