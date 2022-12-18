@@ -62,4 +62,10 @@ So... not solved yet. Hamilton cycles? Maybe not, perhaps rather test all permut
 
 ### Day 17
 
-Not so super-hard, a bit tedious to handle the various rock shapes, but a relatively straightforward step-by-step simulation. The second part gets more interesting, because it would take about 277 days again, this needs a bit more optimization (the memory requirements aren't a problem, because you can just pop a couple 1000 lines off the bottom of the array periodically and add empty ones on top again).
+Part 1: not so super-hard, a bit tedious to handle the various rock shapes, but a relatively straightforward step-by-step simulation. The second part gets more interesting, because my approach would take about 277 days again, this needs a _bit_ more optimization (the memory requirements aren't a problem, because you can just pop a couple 1000 lines off the bottom of the array periodically and add empty ones on top again).
+
+### Day 18
+
+Part 1 is again really not that hard, fill a 3D array with the cubes but keep a list of their coordinates, and then walk through them again and check how many 6-neighbors each one has.
+
+Part 2 is a bit trickier, but I found an (IMHO 😉) pretty elegant solution: first count all outside faces as above, then do a 3D flood fill of the "outside" of the lava droplet, starting at `[0,0,0]`, then count all outside faces _again_ (this time, only the "air pockets" inside will be left) and subtract that from the first number. Done.
