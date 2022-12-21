@@ -68,10 +68,22 @@ So... not solved yet. Hamilton cycles? Maybe not, perhaps rather test all permut
 
 Part 1: not so super-hard, a bit tedious to handle the various rock shapes, but a relatively straightforward step-by-step simulation. The second part gets more interesting, because my approach would take about 277 days again, this needs a _bit_ more optimization (the memory requirements aren't a problem, because you can just pop a couple 1000 lines off the bottom of the array periodically and add empty ones on top again).
 
-Hm, maybe the pattern will repeat at some point?
+Hm, maybe the pattern will repeat at some point? I think that's the right way to go, but I still have an error somewhere...
 
 ### Day 18 (Lava Droplets)
 
 Part 1 is again really not that hard, fill a 3D array with the cubes but keep a list of their coordinates, and then walk through them again and check how many 6-neighbors each one has.
 
 Part 2 is a bit trickier, but I found an (IMHO 😉) pretty elegant solution: first count all outside faces as above, then do a 3D flood fill of the "outside" of the lava droplet, starting at `[0,0,0]`, then count all outside faces _again_ (this time, only the "air pockets" inside will be left) and subtract that from the first number. Done.
+
+### Day 19 (Resource Robots)
+
+Very similar to day 16, and I'm having the same problems 😑 Will have to get back to this one later.
+
+### Day 20 (Un-mixing Encryption)
+
+Looks relatively straightforward, though I apparently have overlooked some ugly edge cases that are not handled properly, so still not solved yet.
+
+### Day 21 (Monkey Math)
+
+Part 1 finally solved again at the first try 😅 Have a dict from name to class `Monkey`, which lists dependent monkeys on left and right side. Then repeatedly fill in the data from those monkeys that already have an answer, until you reach the "root" monkey.
