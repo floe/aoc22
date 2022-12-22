@@ -11,8 +11,8 @@ class Mynum:
     def __str__(self):
         return(str(self.num))
 
-with open("input20.tiny") as file:
-#with open("input20") as file:
+#with open("input20.tiny") as file:
+with open("input20") as file:
     i = 0
     for line in file:
         num = int(line.strip())
@@ -26,7 +26,7 @@ count = len(numbers)
 print(count)
 
 for i,x in enumerate(numbers_orig):
-    print([ str(n) for n in numbers ])
+    #print([ str(n) for n in numbers ])
     curpos = numbers.index(x)
     #sign = -1 if x.num < 0 else 0
     #if curpos+x.num+sign > count:
@@ -36,11 +36,12 @@ for i,x in enumerate(numbers_orig):
     #    sign=1
     #elif x.num < 0:
     #    sign=-1
+    wrapcount = (curpos+x.num)//count
+    print(wrapcount)
     newpos = (curpos+x.num+100*count)%count
+    newpos += wrapcount
     if newpos == 0:
         newpos = count
-    if curpos < newpos:
-        newpos += 1
     print(x.num,": from/to: ",curpos,newpos)
     numbers.pop(curpos)
     numbers.insert(newpos,x)

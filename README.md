@@ -82,10 +82,16 @@ Very similar to day 16, and I'm having the same problems 😑 Will have to get b
 
 ### Day 20 (Un-mixing Encryption)
 
-Looks relatively straightforward, though I apparently have overlooked some ugly edge cases that are not handled properly, so still not solved yet.
+Part 1 looked relatively straightforward, though I apparently had overlooked some ugly edge cases that were not handled properly, that took some time. The knack is that the regular array has two ends, but as the result should be considered circular, it only has one potential insertion slot "between" the ends.
+
+Part 2 apparently has some more nasty edge cases I need to solve...
 
 ### Day 21 (Monkey Math)
 
 Part 1 finally solved again at the first try 😅 Have a dict from name to class `Monkey`, which lists dependent monkeys on left and right side. Then repeatedly fill in the data from those monkeys that already have an answer, until you reach the "root" monkey.
 
 Part 2: a bit more involved, but instead of propagating data upwards to the root monkey, now propagate results downwards and invert the operators every time.
+
+### Day 22 (Maze)
+
+...
