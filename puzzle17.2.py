@@ -138,11 +138,19 @@ chamber.append([ "#" for j in range(0,7) ])
 for i in range(0,5000): #rockcount//5*13):
     chamber.append([ "." for j in range(0,7) ])
 
+print(len(gasjets))
+
 for i in range(0,rockcount):
 
     #if i <= 11:
     #    for y in range(toppos,0,-1):
     #        print("".join(chamber[y]))
+
+    if curjet % len(gasjets) == 0:
+        print("REPEAT")
+        print(curjet)
+        if curjet > 0:
+            break
 
     simulate_rock(currock%5,toppos+3)
     currock += 1
@@ -153,7 +161,7 @@ for i in range(0,rockcount):
             chamber.append([ "." for j in range(0,7) ])
         chamber_offset += 1000
     if i % 100000 == 0:
-        print(i,toppos,chamber_offset)
+        print(i,toppos,chamber_offset,curjet,curjet%len(gasjets))
     if i % 1000000 == 0:
         print("--------------------------")
 

@@ -87,3 +87,5 @@ Looks relatively straightforward, though I apparently have overlooked some ugly 
 ### Day 21 (Monkey Math)
 
 Part 1 finally solved again at the first try 😅 Have a dict from name to class `Monkey`, which lists dependent monkeys on left and right side. Then repeatedly fill in the data from those monkeys that already have an answer, until you reach the "root" monkey.
+
+Part 2: a bit more involved, but instead of propagating data upwards to the root monkey, now propagate results downwards and invert the operators every time.
