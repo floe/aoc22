@@ -94,4 +94,16 @@ Part 2: a bit more involved, but instead of propagating data upwards to the root
 
 ### Day 22 (Maze)
 
+That took forever - I had overlooked that the last movement instruction does not end with a letter and had therefore skipped on parsing the final step count. Meh.
+
+### Day 23 (Diffusion)
+
 ...
+
+### Day 24 (Blizzards)
+
+Another one that follows the same pattern where my brain somehow doesn't click (just like 16 and 19). Revisit next year.
+
+### Day 25 (SNAFU Numbers)
+
+That one was easy - do a plain old modulo division for each position, but add two on each iteration before dividing. But I'm still missing a bunch of stars from the previous days, let's see if I can still manage to collect them sometime 😉
