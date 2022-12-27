@@ -84,7 +84,7 @@ Very similar to day 16, and I'm having the same problems 😑 Will have to get b
 
 Part 1 looked relatively straightforward, though I apparently had overlooked some ugly edge cases that were not handled properly, that took some time. The knack is that the regular array has two ends, but as the result should be considered circular, it only has one potential insertion slot "between" the ends.
 
-Part 2 apparently has some more nasty edge cases I need to solve...
+Part 2 took waaaay longer again (until the 27th!), until I realized that I can just calculate everything modulo `size - 1` instead of `size`, then it was solved in five minutes.
 
 ### Day 21 (Monkey Math)
 
