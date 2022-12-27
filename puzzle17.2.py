@@ -3,7 +3,6 @@
 import itertools,random
 
 chamber = []
-chamber_offset = 0
 
 def check_plus(x,y):
     return(x >= 0 and x <= 4 and
@@ -111,18 +110,18 @@ def simulate_rock(rocknum,starty):
         jet = gasjets[curjet % len(gasjets)]
         curjet += 1
         
-        if check_direction(x,y-chamber_offset,jet):
+        if check_direction(x,y,jet):
             if jet == "<":
                 x -= 1
             else:
                 x += 1
-        if check_direction(x,y-chamber_offset,"v"):
+        if check_direction(x,y,"v"):
             y -= 1
         else:
             nextpos = y+height[currock%5]
             if nextpos > toppos:
                 toppos = nextpos
-            setrk[currock%5](x,y-chamber_offset)
+            setrk[currock%5](x,y)
             return
 
 #with open("input17.tiny") as file:
@@ -135,34 +134,46 @@ with open("input17") as file:
 
 chamber.append([ "#" for j in range(0,7) ])
 
-for i in range(0,5000): #rockcount//5*13):
+for i in range(0,15000): #rockcount//5*13):
     chamber.append([ "." for j in range(0,7) ])
 
-print(len(gasjets))
+tops = {}
 
 for i in range(0,rockcount):
 
-    #if i <= 11:
-    #    for y in range(toppos,0,-1):
-    #        print("".join(chamber[y]))
-
-    if curjet % len(gasjets) == 0:
-        print("REPEAT")
-        print(curjet)
-        if curjet > 0:
+    if currock % 5 == 0:
+        if curjet%len(gasjets) in tops:
+            #print(i,toppos-1,curjet,curjet%len(gasjets),tops[curjet%len(gasjets)],len(tops))
             break
+        if chamber[toppos-1][3] == "#":
+            tops[curjet%len(gasjets)] = [ toppos-1, currock ]
 
     simulate_rock(currock%5,toppos+3)
     currock += 1
 
-    if toppos - chamber_offset > 2000:
-        for k in range(0,1000):
-            chamber.pop(0)
-            chamber.append([ "." for j in range(0,7) ])
-        chamber_offset += 1000
-    if i % 100000 == 0:
-        print(i,toppos,chamber_offset,curjet,curjet%len(gasjets))
-    if i % 1000000 == 0:
-        print("--------------------------")
+#print(sorted(tops.items()))
 
-print(toppos-1) #height[(currock-1)%5])
+loopstart = tops[curjet % len(gasjets)][0]
+loopend = toppos-1
+looplen = loopend-loopstart
+
+startrock = tops[curjet % len(gasjets)][1]
+endrock = currock
+rocklen = endrock-startrock
+
+print(loopstart,loopend,looplen)
+print(startrock,endrock,rocklen)
+
+rest = rockcount - startrock
+iterations = rest // rocklen
+
+remainder = rest % rocklen
+print(rest,iterations,remainder)
+
+for i in range(0,remainder):
+    simulate_rock(currock%5,toppos+3)
+    currock += 1
+
+height = loopstart + (iterations * looplen) + (toppos-1-loopend)
+print(height)
+

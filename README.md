@@ -68,7 +68,7 @@ So... not solved yet. Hamilton cycles? Maybe not, perhaps rather test all permut
 
 Part 1: not so super-hard, a bit tedious to handle the various rock shapes, but a relatively straightforward step-by-step simulation. The second part gets more interesting, because my approach would take about 277 days again, this needs a _bit_ more optimization (the memory requirements aren't a problem, because you can just pop a couple 1000 lines off the bottom of the array periodically and add empty ones on top again).
 
-Hm, maybe the pattern will repeat at some point? I think that's the right way to go, but I still have an error somewhere...
+Part 2: I soon had the idea that there might be some repetition in the rock pattern that you can use to shortcut the simulation, but it took me forever to make it work. The insight I had missed until today (Dec. 27th!) was that the repetition doesn't necessarily have to start at position 0 again. But this is now solved at last.
 
 ### Day 18 (Lava Droplets)
 
