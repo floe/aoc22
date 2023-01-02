@@ -107,3 +107,5 @@ Another one that follows the same pattern where my brain somehow doesn't click (
 ### Day 25 (SNAFU Numbers)
 
 That one was easy - do a plain old modulo division for each position, but add two on each iteration before dividing. But I'm still missing a bunch of stars from the previous days, let's see if I can still manage to collect them sometime 😉
+
+![Jack Sparrow](jacksparrow.jpg)
