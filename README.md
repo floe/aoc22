@@ -1,8 +1,10 @@
 # Advent of Code 2022
 
+So this year, I came across [Advent of Code](https://adventofcode.com/2022) (again), and decided to give it a go. Solutions in the repo, random notes below. I'll note that I didn't look up any solutions or hints anywhere else (especially including ChatGPT or CoPilot), this is 100% my own mess. (With the obvious exception that I have to google super-primitive Python idioms all the time. Did you know that `swap(a,b)` in Python is canonically `b,a = a,b`? Neat, isn't it?) 
+
 *Warning ⚠️ spoilers below*
 
-So this year, I came across [Advent of Code](https://adventofcode.com/2022) (again), and decided to give it a go. Solutions in the repo, random notes below. I'll note that I didn't look up any solutions or hints anywhere else (especially including ChatGPT or CoPilot), this is 100% my own mess. (With the obvious exception that I have to google super-primitive Python idioms all the time. Did you know that `swap(a,b)` in Python is canonically `b,a = a,b`? Neat, isn't it?) 
+![Jack Sparrow](jacksparrow.jpg)
 
 ### Day 1-6
 
@@ -94,7 +96,9 @@ Part 2: a bit more involved, but instead of propagating data upwards to the root
 
 ### Day 22 (Maze)
 
-That took forever - I had overlooked that the last movement instruction does not end with a letter and had therefore skipped on parsing the final step count. Meh.
+Part 1 took forever - I had overlooked that the last movement instruction does not end with a letter and had therefore skipped on parsing the final step count. Meh.
+
+Part 2 was surprisingly tedious, I did not find a clever way to implement the "cubemap" wrapping other than handling each one of 14 separate cases (transitions from one cubeface to another) individually... 
 
 ### Day 23 (Diffusion)
 
@@ -108,4 +112,3 @@ Another one that follows the same pattern where my brain somehow doesn't click (
 
 That one was easy - do a plain old modulo division for each position, but add two on each iteration before dividing. But I'm still missing a bunch of stars from the previous days, let's see if I can still manage to collect them sometime 😉
 
-![Jack Sparrow](jacksparrow.jpg)
