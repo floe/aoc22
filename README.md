@@ -102,7 +102,7 @@ Part 2 was surprisingly tedious, I did not find a clever way to implement the "c
 
 ### Day 23 (Diffusion)
 
-...
+Implemented part 1, but still buggy.
 
 ### Day 24 (Blizzards)
 
